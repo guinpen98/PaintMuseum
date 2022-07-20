@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.6f1 (7da38d85baf6) revision 8233869'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'ja' Physical Memory: 8101 MB
+OS: 'Windows 10  (10.0.19043) 64bit Professional' Language: 'ja' Physical Memory: 32605 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.6f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/yuri_/OneDrive - 中央大学/repos/Life is a one time game
+C:/Users/yuri/OneDrive - 中央大学/repos/Life is a one time game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59407
-Successfully changed project path to: C:/Users/yuri_/OneDrive - 中央大学/repos/Life is a one time game
-C:/Users/yuri_/OneDrive - 中央大学/repos/Life is a one time game
+65144
+Successfully changed project path to: C:/Users/yuri/OneDrive - 中央大学/repos/Life is a one time game
+C:/Users/yuri/OneDrive - 中央大学/repos/Life is a one time game
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,105 +47,105 @@ C:/Users/yuri_/OneDrive - 中央大学/repos/Life is a one time game
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 294.30 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 63.27 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/yuri_/OneDrive - 中央大学/repos/Life is a one time game/Assets
+[Subsystems] Discovering subsystems at path C:/Users/yuri/OneDrive - 中央大学/repos/Life is a one time game/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) UHD Graphics 620 (ID=0x5917)
-    Vendor:   Intel
-    VRAM:     4050 MB
-    Driver:   26.20.100.7323
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2484)
+    Vendor:   NVIDIA
+    VRAM:     8043 MB
+    Driver:   30.0.14.9613
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56204
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.022083 seconds.
+Registered in 0.004124 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 282.39 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 65.04 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.797 seconds
+- Completed reload, in  0.465 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1798ms)
-		BeginReloadAssembly (212ms)
+	ReloadAssembly (465ms)
+		BeginReloadAssembly (50ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (1285ms)
-			LoadAssemblies (205ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (339ms)
+			LoadAssemblies (48ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (305ms)
+			SetupTypeCache (76ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (77ms)
-			SetupLoadedEditorAssemblies (771ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (198ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (23ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (283ms)
-				BeforeProcessingInitializeOnLoad (4ms)
-				ProcessInitializeOnLoadAttributes (326ms)
-				ProcessInitializeOnLoadMethodAttributes (134ms)
+				RefreshPlugins (65ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (92ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.023540 seconds.
+Registered in 0.004695 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\yuri_\OneDrive - 中央大学\repos\Life is a one time game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\yuri_\OneDrive - 中央大学\repos\Life is a one time game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yuri\OneDrive - 中央大学\repos\Life is a one time game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\yuri\OneDrive - 中央大学\repos\Life is a one time game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.22 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.38 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.088 seconds
+- Completed reload, in  0.767 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3091ms)
-		BeginReloadAssembly (327ms)
+	ReloadAssembly (767ms)
+		BeginReloadAssembly (83ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (17ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (46ms)
-		EndReloadAssembly (2397ms)
-			LoadAssemblies (236ms)
+			CreateAndSetChildDomain (13ms)
+		EndReloadAssembly (598ms)
+			LoadAssemblies (54ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (770ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (166ms)
-			SetupLoadedEditorAssemblies (1083ms)
+			SetupTypeCache (196ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (265ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (303ms)
-				ProcessInitializeOnLoadAttributes (651ms)
-				ProcessInitializeOnLoadMethodAttributes (81ms)
-				AfterProcessingInitializeOnLoad (24ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (167ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (18ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
-Refreshing native plugins compatible for Editor in 2.04 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 0.37 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3368 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 27 unused Assets / (111.0 KB). Loaded Objects now: 3825.
-Memory consumption went from 115.9 MB to 115.8 MB.
-Total: 7.526200 ms (FindLiveObjects: 0.517500 ms CreateObjectMapping: 0.494100 ms MarkObjects: 6.292100 ms  DeleteObjects: 0.219800 ms)
+Unloading 3366 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 27 unused Assets / (111.0 KB). Loaded Objects now: 3823.
+Memory consumption went from 115.8 MB to 115.7 MB.
+Total: 2.413900 ms (FindLiveObjects: 0.185300 ms CreateObjectMapping: 0.083200 ms MarkObjects: 2.068700 ms  DeleteObjects: 0.076000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -160,55 +160,127 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 438290.052345 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e55ccaa32d8e5c1de03c07a5412c8c3c') in 0.027027 seconds 
+  Time since last request: 269615.155384 seconds.
+  path: Assets/Scenes/Project
+  artifactKey: Guid(84d9255d857dfca499851e22924f68b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Project using Guid(84d9255d857dfca499851e22924f68b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7686acea5665e2a4003d29d95c92cdd') in 0.008424 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 86.500658 seconds.
-  path: Assets/Scenes/Natsutsu.unity
-  artifactKey: Guid(0a1c32341367c214083f8d62a2f6e8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Natsutsu.unity using Guid(0a1c32341367c214083f8d62a2f6e8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '875258ec571da6d57b6ad87338a027fa') in 0.017647 seconds 
+  Time since last request: 17.615306 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79842766b460edbeab6a34051e857a80') in 0.005304 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.488459 seconds.
-  path: Assets/Scenes/Aden.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Aden.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92b06287c8b05833075034ad36b2a4e3') in 0.015619 seconds 
+  Time since last request: 5.826518 seconds.
+  path: Assets/Project
+  artifactKey: Guid(350826bc959dd534f8bec978ae4aa8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project using Guid(350826bc959dd534f8bec978ae4aa8cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6d79361cce12df583e1c61b0a051d39') in 0.001718 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.082074 seconds.
-  path: Assets/Scenes
-  artifactKey: Guid(6ea315d0fd7389c41b19996891e99ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(6ea315d0fd7389c41b19996891e99ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8193726cff86800c54781cdc6d54904') in 0.018976 seconds 
+  Time since last request: 169.868228 seconds.
+  path: Assets/Project/Audio
+  artifactKey: Guid(55ed91f0be1ba2e47b8475d67e8ddba4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Audio using Guid(55ed91f0be1ba2e47b8475d67e8ddba4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c4a4fe47f60d245a9742f2be39bb35') in 0.004589 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.829656 seconds.
-  path: Assets/Scenes/Main.unity
-  artifactKey: Guid(9542335378e7a2a498b841add9b8786f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Main.unity using Guid(9542335378e7a2a498b841add9b8786f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85d849b1ed4ca1cfe3c3e8167242b86f') in 0.017443 seconds 
+  Time since last request: 8.410529 seconds.
+  path: Assets/Project/Design
+  artifactKey: Guid(1f634813fbff5c844ba4bc5e29ef5803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Design using Guid(1f634813fbff5c844ba4bc5e29ef5803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f5b6c0f1f5242835a11a9aba02cc2af') in 0.004726 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.740649 seconds.
-  path: Assets/Scenes/Shikayan.unity
-  artifactKey: Guid(72857381e7a0d1347a6e7b815ff0c922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Shikayan.unity using Guid(72857381e7a0d1347a6e7b815ff0c922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4d389164785fa9a9944ab71c90c6706') in 0.020848 seconds 
+  Time since last request: 9.426697 seconds.
+  path: Assets/Project/Design/Program
+  artifactKey: Guid(6ad491b48d3243240b3636ad79abd594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Design/Program using Guid(6ad491b48d3243240b3636ad79abd594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '542d2b61b421cee54b9ca39468c8ebc5') in 0.004561 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.542028 seconds.
-  path: Assets/Scenes/Omito.unity
-  artifactKey: Guid(083418caf9e33994baf7bf254278012c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Omito.unity using Guid(083418caf9e33994baf7bf254278012c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '196e797a1b0b9ba8b40380500bda90b4') in 0.018896 seconds 
+  Time since last request: 18.217937 seconds.
+  path: Assets/Project/Program/Natsutsu
+  artifactKey: Guid(8c463061c36200341808e39267522768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Natsutsu using Guid(8c463061c36200341808e39267522768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49b78be4f28ffbc05b2b18c7c3bd02db') in 0.005073 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 16.183666 seconds.
-  path: Assets/Scenes/Yuuyu.unity
-  artifactKey: Guid(59e743cde7a7b1c46b45af91cdba6655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Yuuyu.unity using Guid(59e743cde7a7b1c46b45af91cdba6655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6422b179004824080b17b4b981423b4') in 0.020245 seconds 
+  Time since last request: 12.887073 seconds.
+  path: Assets/Project/Program/Aden
+  artifactKey: Guid(fefb6c039fc4f454e890b9dfc5b05898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Aden using Guid(fefb6c039fc4f454e890b9dfc5b05898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48b343abd39a384df829c0ce34fd8f8f') in 0.004986 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 20.425959 seconds.
-  path: Assets/Scenes/Yu-ri.unity
-  artifactKey: Guid(6c654d4184351ec4a8abfd83b2cc4e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Yu-ri.unity using Guid(6c654d4184351ec4a8abfd83b2cc4e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03c4eee63bae4608fb8a31486d631048') in 0.018338 seconds 
+  Time since last request: 11.304650 seconds.
+  path: Assets/Project/Program/Omito
+  artifactKey: Guid(ce5e38627cdb2bf4687982bf5ab156fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Omito using Guid(ce5e38627cdb2bf4687982bf5ab156fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afd0de5ecca83a3bdfe386591ad254d9') in 0.004540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.810801 seconds.
+  path: Assets/Project/Program/Shikayan
+  artifactKey: Guid(e0818fa2565a83640bc26046606b7eca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Shikayan using Guid(e0818fa2565a83640bc26046606b7eca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc8132f128472a4c98ed8d5b113dabe7') in 0.004873 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.913605 seconds.
+  path: Assets/Project/Program/Yu-ri
+  artifactKey: Guid(e95dad8a7dba7d043b4323a2ae7cfa07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Yu-ri using Guid(e95dad8a7dba7d043b4323a2ae7cfa07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84f8d42a057612ab31d45b96264ea19b') in 0.004737 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.137713 seconds.
+  path: Assets/Project/Program/Yuuyu
+  artifactKey: Guid(695b9b833ef03b44585f684f95cea920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Yuuyu using Guid(695b9b833ef03b44585f684f95cea920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d5a8749ea9873098d61696400b30bd7') in 0.004741 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.276013 seconds.
+  path: Assets/Project/Program/Main
+  artifactKey: Guid(ed6d5c7d8309cc84c8a991b3dbd6a299) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Main using Guid(ed6d5c7d8309cc84c8a991b3dbd6a299) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f90b43fec00c2262df59b73f886d1865') in 0.004555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.495842 seconds.
+  path: Assets/Project/Program/Aden/Scripts
+  artifactKey: Guid(bb64bb9dff05d3a4ba360bd54a934a6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Aden/Scripts using Guid(bb64bb9dff05d3a4ba360bd54a934a6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e485b9ecbc83d1a0e3dca7bbdde44cd2') in 0.004802 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.699042 seconds.
+  path: Assets/Project/Program/Aden/Materials
+  artifactKey: Guid(0c33e079da00e3d4e8e27ea0ae8e3023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Aden/Materials using Guid(0c33e079da00e3d4e8e27ea0ae8e3023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '913d191e22d674146acd952a3e9c34f8') in 0.005076 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.195372 seconds.
+  path: Assets/Project/Program/Main/Materials
+  artifactKey: Guid(6b77d7434b6824243853b6ac77523697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Main/Materials using Guid(6b77d7434b6824243853b6ac77523697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '463577f34dcf7bea156828d1f68b25a7') in 0.002045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.086486 seconds.
+  path: Assets/Project/Program/Natsutsu/Materials
+  artifactKey: Guid(45b8a47889b8eee43a5835b856f8e7da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Natsutsu/Materials using Guid(45b8a47889b8eee43a5835b856f8e7da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2df0834acf9716ece29479fe5d19f4cd') in 0.001724 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.808239 seconds.
+  path: Assets/Project/Program/Omito/Materials
+  artifactKey: Guid(47435c4ddba790b418af2ae17a79b235) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Omito/Materials using Guid(47435c4ddba790b418af2ae17a79b235) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b1909cbee2eb2fdc785b1ab7959815') in 0.002035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.683339 seconds.
+  path: Assets/Project/Program/Shikayan/Materials
+  artifactKey: Guid(055a5dd00dfed2446a770465a63b1557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Shikayan/Materials using Guid(055a5dd00dfed2446a770465a63b1557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fcd341843f830ba9c6e2ec717bda803') in 0.001899 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.923940 seconds.
+  path: Assets/Project/Program/Yu-ri/Materials
+  artifactKey: Guid(43b33641a50fb3144aba85b22fdbb8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Yu-ri/Materials using Guid(43b33641a50fb3144aba85b22fdbb8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa86c7920d6475b13fcc2d4b64011e84') in 0.001869 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.561088 seconds.
+  path: Assets/Project/Program/Yuuyu/Materials
+  artifactKey: Guid(5cfd12ec8a178ac4ab12505750b2dfe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Program/Yuuyu/Materials using Guid(5cfd12ec8a178ac4ab12505750b2dfe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36501dacdbe7fc5572f84f53d4107b5e') in 0.001775 seconds 
