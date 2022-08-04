@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 namespace Player
 {
     [RequireComponent(typeof(CharacterController))]
-    public class PlayerMove : MonoBehaviour
+    public class PlayerMove2D : MonoBehaviour
     {
         [SerializeField] float speed = 3;
 
@@ -42,7 +42,7 @@ namespace Player
         }
         void setAnima()
         {
-            if (inputMove.x == 0 && inputMove.y == 0) anima.SetFloat("Speed", 0f);
+            if (inputMove.x == 0) anima.SetFloat("Speed", 0f);
             else anima.SetFloat("Speed", 1f);
             if (inputMove.x != 1.0f && inputMove.x != -1.0f) return;
             Vector3 scale = transform.localScale;
@@ -89,7 +89,7 @@ namespace Player
             var moveVelocity = new Vector3(
                 inputMove.x * speed,
                 verticalVelocity,
-                inputMove.y * speed
+                0
             );
             // 現在フレームの移動量を移動速度から計算
             var moveDelta = moveVelocity * Time.deltaTime;
