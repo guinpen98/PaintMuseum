@@ -6,7 +6,7 @@ public class StageObject : MonoBehaviour, IEffectable
 {
     bool isStop = false;
     Rigidbody rb;
-    Vector3 force = new Vector3(0.0f, -1.0f, 0.0f);
+    Vector3 force = new Vector3(0.0f, -2.0f, 0.0f);
     void Start()
     {
         rb = GetComponent<Rigidbody>();
