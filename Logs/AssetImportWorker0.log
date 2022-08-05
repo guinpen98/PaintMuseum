@@ -11,6 +11,7 @@ C:\Program Files\Unity\Hub\Editor\2021.3.6f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
+
 C:/Users/yuyu0/Desktop/a/Life-is-a-one-time-game
 -logFile
 Logs/AssetImportWorker0.log
@@ -18,6 +19,7 @@ Logs/AssetImportWorker0.log
 52036
 Successfully changed project path to: C:/Users/yuyu0/Desktop/a/Life-is-a-one-time-game
 C:/Users/yuyu0/Desktop/a/Life-is-a-one-time-game
+
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,11 +49,13 @@ C:/Users/yuyu0/Desktop/a/Life-is-a-one-time-game
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
+
 Refreshing native plugins compatible for Editor in 93.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/yuyu0/Desktop/a/Life-is-a-one-time-game/Assets
+
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -63,6 +67,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56408
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -76,11 +81,13 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (692ms)
 		BeginReloadAssembly (79ms)
+
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
+
 		EndReloadAssembly (485ms)
 			LoadAssemblies (76ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
@@ -95,12 +102,14 @@ Domain Reload Profiling:
 				BeforeProcessingInitializeOnLoad (1ms)
 				ProcessInitializeOnLoadAttributes (136ms)
 				ProcessInitializeOnLoadMethodAttributes (50ms)
+
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
+
 Registered in 0.006605 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\yuyu0\Desktop\a\Life-is-a-one-time-game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
@@ -137,7 +146,7 @@ Domain Reload Profiling:
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-========================================================================
+
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
 Refreshing native plugins compatible for Editor in 2.67 ms, found 3 plugins.
@@ -146,6 +155,7 @@ Unloading 3750 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 28 unused Assets / (55.2 KB). Loaded Objects now: 4210.
 Memory consumption went from 132.0 MB to 131.9 MB.
 Total: 3.298100 ms (FindLiveObjects: 0.326400 ms CreateObjectMapping: 0.240300 ms MarkObjects: 2.659800 ms  DeleteObjects: 0.070800 ms)
+
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -158,15 +168,17 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
+
 Received Import Request.
+
   Time since last request: 914981.025758 seconds.
   path: Assets/Project/Program/Yuuyu
   artifactKey: Guid(695b9b833ef03b44585f684f95cea920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Project/Program/Yuuyu using Guid(695b9b833ef03b44585f684f95cea920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25d74e18c9a95cc36c4a6fa31c2bd58b') in 0.015149 seconds 
-========================================================================
+
 Received Import Request.
   Time since last request: 1.086788 seconds.
   path: Assets/Project/Program/Yuuyu/Yuuyu.unity
   artifactKey: Guid(59e743cde7a7b1c46b45af91cdba6655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Project/Program/Yuuyu/Yuuyu.unity using Guid(59e743cde7a7b1c46b45af91cdba6655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a882e94abe670d98e4620aae36f8e33') in 0.008426 seconds 
+
