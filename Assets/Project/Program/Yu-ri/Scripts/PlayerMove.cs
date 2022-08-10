@@ -42,12 +42,29 @@ namespace Player
         }
         void setAnima()
         {
-            if (inputMove.x == 0 && inputMove.y == 0) anima.SetFloat("Speed", 0f);
-            else anima.SetFloat("Speed", 1f);
-            if (inputMove.x != 1.0f && inputMove.x != -1.0f) return;
-            Vector3 scale = transform.localScale;
-            scale.x = inputMove.x * 0.5f;
-            transform.localScale = scale;
+            if (inputMove.x == 0 && inputMove.y == 0) anima.SetBool("IsMove", false);
+            else anima.SetBool("IsMove", true);
+            if (inputMove.x > 0)
+            {
+                anima.SetFloat("X", 1f);
+                anima.SetFloat("Y", 0f);
+            }
+            else if (inputMove.x < 0)
+            {
+                anima.SetFloat("X", -1f);
+                anima.SetFloat("Y", 0f);
+            }
+            else if (inputMove.y > 0)
+            {
+                anima.SetFloat("X", 0f);
+                anima.SetFloat("Y", 1f);
+            }
+            else if(inputMove.y < 0)
+            {
+                anima.SetFloat("X", 0f);
+                anima.SetFloat("Y", -1f);
+
+            }
         }
 
         private void Start()

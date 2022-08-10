@@ -46,7 +46,6 @@ namespace Player
             else anima.SetFloat("Speed", 1f);
             if (inputMove.x != 1.0f && inputMove.x != -1.0f) return;
             Vector3 scale = transform.localScale;
-            scale.x = inputMove.x * 0.5f;
             transform.localScale = scale;
         }
 
