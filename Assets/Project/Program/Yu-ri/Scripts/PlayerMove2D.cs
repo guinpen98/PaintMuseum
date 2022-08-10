@@ -18,18 +18,18 @@ namespace Player
 
         [SerializeField] float initFallSpeed = 2;
 
-        CharacterController characterController;
+        CharacterController _characterController;
 
         Vector2 inputMove;
         float verticalVelocity;
         bool isGroundedPrev;
 
-        Animator anima;
+        Animator _anima;
 
         public void OnJump(InputAction.CallbackContext context)
         {
             // ボタンが押された瞬間かつ着地している時だけ処理
-            if (!context.performed || !characterController.isGrounded) return;
+            if (!context.performed || !_characterController.isGrounded) return;
 
             // 鉛直上向きに速度を与える
             verticalVelocity = jumpSpeed;
@@ -42,17 +42,24 @@ namespace Player
         }
         void setAnima()
         {
-            if (inputMove.x == 0) anima.SetFloat("Speed", 0f);
-            else anima.SetFloat("Speed", 1f);
-            if (inputMove.x != 1.0f && inputMove.x != -1.0f) return;
-            Vector3 scale = transform.localScale;
-            transform.localScale = scale;
+            if (inputMove.x == 0) _anima.SetBool("IsMove", false);
+            else _anima.SetBool("IsMove", true);
+            if (inputMove.x > 0)
+            {
+                _anima.SetFloat("X", 1f);
+            }
+            else if (inputMove.x < 0)
+            {
+                _anima.SetFloat("X", -1f);
+            }
         }
 
         private void Start()
         {
-            characterController = GetComponent<CharacterController>();
-            anima = GetComponent<Animator>();
+            _characterController = GetComponent<CharacterController>();
+            _anima = GetComponent<Animator>();
+            _anima.SetFloat("X", 1f);
+            _anima.SetFloat("Y", 0f);
         }
 
         private void Update()
@@ -62,8 +69,8 @@ namespace Player
         }
         void Jump()
         {
-            bool isGrounded = characterController.isGrounded;
-            anima.SetBool("IsGrounded", isGrounded);
+            bool isGrounded = _characterController.isGrounded;
+            _anima.SetBool("IsGrounded", isGrounded);
 
             if (isGrounded && !isGroundedPrev)
             {
@@ -84,9 +91,11 @@ namespace Player
         }
         void Move()
         {
+            float tmpX = 0;
+            if (inputMove.x != 0) tmpX = inputMove.x > 0 ? 1 : -1;
             // 操作入力と鉛直方向速度から、現在速度を計算
             var moveVelocity = new Vector3(
-                inputMove.x * speed,
+                tmpX * speed,
                 verticalVelocity,
                 0
             );
@@ -94,7 +103,7 @@ namespace Player
             var moveDelta = moveVelocity * Time.deltaTime;
 
             // CharacterControllerに移動量を指定し、オブジェクトを動かす
-            characterController.Move(moveDelta);
+            _characterController.Move(moveDelta);
         }
     }
 }
