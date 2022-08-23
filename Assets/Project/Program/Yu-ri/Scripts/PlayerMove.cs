@@ -81,7 +81,7 @@ namespace Player
         void Jump()
         {
             bool isGrounded = _characterController.isGrounded;
-            _anima.SetBool("IsGrounded", isGrounded);
+            //_anima.SetBool("IsGrounded", isGrounded);
 
             if (isGrounded && !isGroundedPrev)
             {
