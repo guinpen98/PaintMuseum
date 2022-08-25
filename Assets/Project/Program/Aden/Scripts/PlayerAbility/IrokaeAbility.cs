@@ -57,7 +57,7 @@ public class IrokaeAbility : MonoBehaviour
                 iro_number = 5;
                 break;
             case "White":
-                iro_number = 5;
+                iro_number = 6;
                 break;
         }
 
@@ -89,6 +89,9 @@ public class IrokaeAbility : MonoBehaviour
                         case 4:
                             obj.GetComponent<Renderer>().material.color = Color.yellow;
                             break;
+                        /*case 5:
+                            obj.GetComponent<Renderer>().material.color = Color.pink;
+                            break;*/
 
                     }
                 }
