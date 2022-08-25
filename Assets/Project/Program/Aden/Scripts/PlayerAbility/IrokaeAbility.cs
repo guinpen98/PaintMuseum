@@ -7,16 +7,18 @@ public class IrokaeAbility : MonoBehaviour
     Camera mainCamera;
     GameObject obj;
     int iro_number = 0;
+    [SerializeField] private GameObject Cursormanager;
+    private string colorcode;
     // Start is called before the first frame update
     void Start()
     {
-      
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             iro_number = 1;
         }
@@ -32,7 +34,34 @@ public class IrokaeAbility : MonoBehaviour
         {
             iro_number = 4;
             
+        }*/
+
+        //CursorManagerスクリプトからいまどの色になっているかを取ってきてcolorcode変数に代入
+        colorcode = Cursormanager.GetComponent<CursorManager>().colorname;
+        //筆の色の判別
+        switch (colorcode)
+        {
+            case "Blue":
+                iro_number = 3;
+                break;
+            case "Red":
+                iro_number = 1;
+                break;
+            case "Yellow":
+                iro_number = 4;
+                break;
+            case "Green":
+                iro_number = 2;
+                break;
+            case "Pink":
+                iro_number = 5;
+                break;
+            case "White":
+                iro_number = 5;
+                break;
         }
+
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
