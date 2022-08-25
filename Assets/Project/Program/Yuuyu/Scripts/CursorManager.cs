@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CursorManager : MonoBehaviour
 {
     //カーソルの画像を指定
-    [SerializeField] public Texture2D CursorImgBlue;
-    [SerializeField] public Texture2D CursorImgRed;
-    [SerializeField] public Texture2D CursorImgYellow;
-    [SerializeField] public Texture2D CursorImgGreen;
-    [SerializeField] public Texture2D CursorImgPink;
-    [SerializeField] public Texture2D CursorImgWhite;
+    [SerializeField] private Sprite CursorImgBlue;
+    [SerializeField] private Sprite CursorImgRed;
+    [SerializeField] private Sprite CursorImgYellow;
+    [SerializeField] private Sprite CursorImgGreen;
+    [SerializeField] private Sprite CursorImgPink;
+    [SerializeField] private Sprite CursorImgWhite;
 
-    [SerializeField] public int size;
     //カーソルの画像の変更フラグ
     private bool isCursorChange=false;
 
@@ -35,6 +35,16 @@ public class CursorManager : MonoBehaviour
     //カーソルのスポット点の設定
     private Vector2 hotSpot = new Vector2(0,0);
 
+    //画像
+    private Image Mouse_Image;
+    [SerializeField] private GameObject Mouse_Image_obj;
+    //Canvasの変数
+    private Canvas canvas;
+    //キャンバス内のレクトトランスフォーム
+    private RectTransform canvasRect;
+    //マウスの位置の最終的な格納先
+    private Vector2 MousePos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,19 +53,27 @@ public class CursorManager : MonoBehaviour
         // マウスカーソルを消去する
         Cursor.visible = false;
 
-        //aa= ResizeTexture(CursorImgBlue, size, size);
-        //CursorImgBlue = aa;
+        //HierarchyにあるCanvasオブジェクトを探してcanvasに入れいる
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+        //canvas内にあるRectTransformをcanvasRectに入れる
+        canvasRect = canvas.GetComponent<RectTransform>();
+
+        //Canvas内にあるMouseImageを探してMouse_Imageに入れる
+        Mouse_Image = Mouse_Image_obj.GetComponent<Image>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Cursor.visible = false;
         //特定のkeyを押すとカーソルが変わる
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (isColorParettePhase == false)
             {
+                
                 //フラグの変更
                 isCursorChange = true;
                 isColorParettePhase = true;
@@ -64,24 +82,26 @@ public class CursorManager : MonoBehaviour
                 //オブジェクトを可視化
                 panel.SetActive(true);
                 colorPallet.SetActive(true);
+                Mouse_Image_obj.gameObject.SetActive(true);
 
-                //カーソルのロックを解除＆見えるようにする
+                //カーソルのロックを解除
                 Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
 
             }
             else
             {
+                
                 //フラグの変更
                 isCursorChange = false;
                 panel.SetActive(false);
                 //オブジェクトを見えなくする
                 colorPallet.SetActive(false);
                 isColorParettePhase = false;
+                Mouse_Image_obj.gameObject.SetActive(false);
 
-                // カーソルを画面内にロックする＆見えなくする
+                // カーソルを画面内にロックする
                 Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                
             }
         }
 
@@ -89,35 +109,46 @@ public class CursorManager : MonoBehaviour
         //マウスカーソルの画像の表示
         if (isCursorChange)
         {
+            //CanvasのRectTransform内にあるマウスの位置をRectTransformのローカルポジションに変換する,canvas.worldCameraはカメラ,出力先はMousePos
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
+            //Mouse_Imageを表示する位置にMousePosを使う
+            Mouse_Image.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x + 25, MousePos.y + 35);
             switch (colorname)
             {
                 case "Blue":
+                    Mouse_Image.sprite = CursorImgBlue;
                     //Cursor.SetCursor(aa, hotSpot, CursorMode.Auto);
-                    Cursor.SetCursor(CursorImgBlue, hotSpot, CursorMode.Auto);
+                    //Cursor.SetCursor(CursorImgBlue, hotSpot, CursorMode.Auto);
                     break;
                 case "Red":
-                    Cursor.SetCursor(CursorImgRed, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgRed;
+                    //Cursor.SetCursor(CursorImgRed, Vector2.zero, CursorMode.Auto);
                     break;
                 case "Yellow":
-                    Cursor.SetCursor(CursorImgYellow, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgYellow;
+                    //Cursor.SetCursor(CursorImgYellow, Vector2.zero, CursorMode.Auto);
                     break;
                 case "Green":
-                    Cursor.SetCursor(CursorImgGreen, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgGreen;
+                    //Cursor.SetCursor(CursorImgGreen, Vector2.zero, CursorMode.Auto);
                     break;
                 case "Pink":
-                    Cursor.SetCursor(CursorImgPink, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgPink;
+                    //Cursor.SetCursor(CursorImgPink, Vector2.zero, CursorMode.Auto);
                     break;
                 case "White":
-                    Cursor.SetCursor(CursorImgWhite, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgWhite;
+                    //Cursor.SetCursor(CursorImgWhite, Vector2.zero, CursorMode.Auto);
                     break;
                 default:
-                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgWhite;
+                    //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                     break;
             }
         }
         else
         {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
 
 
@@ -134,10 +165,5 @@ public class CursorManager : MonoBehaviour
 
     }
 
-    Texture2D ResizeTexture(Texture2D srcTexture, int newWidth, int newHeight)
-    {
-        var resizedTexture = new Texture2D(newWidth, newHeight, TextureFormat.RGBA32, false);
-        Graphics.ConvertTexture(srcTexture, resizedTexture);
-        return resizedTexture;
-    }
+    
 }
