@@ -140,10 +140,10 @@ public class CursorManager : MonoBehaviour
                     Mouse_Image.sprite = CursorImgWhite;
                     //Cursor.SetCursor(CursorImgWhite, Vector2.zero, CursorMode.Auto);
                     break;
-                default:
+                /*default:
                     Mouse_Image.sprite = CursorImgWhite;
                     //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                    break;
+                    break;*/
             }
         }
         else
