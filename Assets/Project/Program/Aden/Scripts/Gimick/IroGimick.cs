@@ -27,7 +27,19 @@ public class IroGimick : MonoBehaviour
         }
         if(this.gameObject.GetComponent<Renderer>().material.color == Color.green)
         {
-            col.enabled = false;
+            col.isTrigger = true;
+        }
+        if (this.gameObject.GetComponent<Renderer>().material.color == Color.blue)
+        {
+            
+        }
+        if (this.gameObject.GetComponent<Renderer>().material.color == Color.yellow)
+        {
+            
+        }
+        if (this.gameObject.GetComponent<Renderer>().material.color == Color.green)
+        {
+            
         }
     }
 }
