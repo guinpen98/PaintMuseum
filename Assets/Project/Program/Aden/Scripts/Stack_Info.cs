@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class Stack_Info : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,12 +13,6 @@ public class StartButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void OnClick_Start()
-    {
-        SceneManager.LoadScene("Exhibition");
         
     }
 }

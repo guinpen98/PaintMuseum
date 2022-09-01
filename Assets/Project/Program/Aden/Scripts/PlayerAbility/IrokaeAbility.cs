@@ -36,9 +36,9 @@ public class IrokaeAbility : MonoBehaviour
             
         }*/
 
-        //CursorManagerスクリプトからいまどの色になっているかを取ってきてcolorcode変数に代入
+        //CursorManager?X?N???v?g?????????????F??????????????????????????colorcode??????????
         colorcode = Cursormanager.GetComponent<CursorManager>().colorname;
-        //筆の色の判別
+        //?M???F??????
         switch (colorcode)
         {
             case "Blue":
@@ -73,7 +73,7 @@ public class IrokaeAbility : MonoBehaviour
                 obj = hit.collider.gameObject;
                 
 
-                if (obj.tag == "irokae")
+                if (obj.tag == "irokae" || obj.tag == "PullOutPosition")
                 {
 
                     switch (iro_number) {
