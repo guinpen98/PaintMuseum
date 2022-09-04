@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class U_22Goal : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,10 +16,11 @@ public class StartButton : MonoBehaviour
     {
         
     }
-
-    public void OnClick_Start()
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Exhibition");
-        
+        if (other.gameObject.name == "Player")
+        {
+            SceneManager.LoadScene("Goal");
+        }
     }
 }

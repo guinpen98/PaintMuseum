@@ -7,6 +7,8 @@ public class IroGimick : MonoBehaviour
     Rigidbody rb;
     Vector3 G;
     BoxCollider col;
+    public GameObject get;
+    bool GetCheck = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +37,19 @@ public class IroGimick : MonoBehaviour
         }
         if (this.gameObject.GetComponent<Renderer>().material.color == Color.yellow)
         {
-            
+            Invoke("GetobjectGimick", 1.0f);
+        
         }
         if (this.gameObject.GetComponent<Renderer>().material.color == Color.green)
         {
             
+        }
+    }
+    void GetobjectGimick()
+    {if (GetCheck == true)
+        {
+            GetCheck = false;
+            Instantiate(get, transform.position, Quaternion.identity);
         }
     }
 }
