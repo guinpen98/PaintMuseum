@@ -19,10 +19,10 @@ public class QuiteGame : MonoBehaviour
     public void EndGame()
     {
         //if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
+       // UnityEditor.EditorApplication.isPlaying = false;//?Q?[???v???C?I??
         
 
-        //Application.Quit();//ゲームプレイ終了
+        //Application.Quit();//?Q?[???v???C?I??
 
     }
 }
