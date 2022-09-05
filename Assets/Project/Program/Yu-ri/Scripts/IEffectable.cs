@@ -1,4 +1,4 @@
-public interface IEffectable
+﻿public interface IEffectable
 {
     void Stop();
 }
