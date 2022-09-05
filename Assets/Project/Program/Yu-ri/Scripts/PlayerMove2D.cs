@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -28,15 +28,15 @@ namespace Player
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            // ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½uŠÔ‚©‚Â’…’n‚µ‚Ä‚¢‚é‚¾‚¯ˆ—
+            // ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸç¬é–“ã‹ã¤ç€åœ°ã—ã¦ã„ã‚‹æ™‚ã ã‘å‡¦ç†
             if (!context.performed || !_characterController.isGrounded) return;
 
-            // ‰”’¼ãŒü‚«‚É‘¬“x‚ğ—^‚¦‚é
+            // é‰›ç›´ä¸Šå‘ãã«é€Ÿåº¦ã‚’ä¸ãˆã‚‹
             verticalVelocity = jumpSpeed;
         }
         public void OnMove(InputAction.CallbackContext context)
         {
-            // “ü—Í’l‚ğ•Û‚µ‚Ä‚¨‚­
+            // å…¥åŠ›å€¤ã‚’ä¿æŒã—ã¦ãŠã
             inputMove = context.ReadValue<Vector2>();
             setAnima();
         }
@@ -74,15 +74,15 @@ namespace Player
 
             if (isGrounded && !isGroundedPrev)
             {
-                // ’…’n‚·‚éuŠÔ‚É—‰º‚Ì‰‘¬‚ğw’è‚µ‚Ä‚¨‚­
+                // ç€åœ°ã™ã‚‹ç¬é–“ã«è½ä¸‹ã®åˆé€Ÿã‚’æŒ‡å®šã—ã¦ãŠã
                 verticalVelocity = -initFallSpeed;
             }
             else if (!isGrounded)
             {
-                // ‹ó’†‚É‚¢‚é‚Æ‚«‚ÍA‰ºŒü‚«‚Éd—Í‰Á‘¬“x‚ğ—^‚¦‚Ä—‰º‚³‚¹‚é
+                // ç©ºä¸­ã«ã„ã‚‹ã¨ãã¯ã€ä¸‹å‘ãã«é‡åŠ›åŠ é€Ÿåº¦ã‚’ä¸ãˆã¦è½ä¸‹ã•ã›ã‚‹
                 verticalVelocity -= gravity * Time.deltaTime;
 
-                // —‰º‚·‚é‘¬‚³ˆÈã‚É‚È‚ç‚È‚¢‚æ‚¤‚É•â³
+                // è½ä¸‹ã™ã‚‹é€Ÿã•ä»¥ä¸Šã«ãªã‚‰ãªã„ã‚ˆã†ã«è£œæ­£
                 if (verticalVelocity < -fallSpeed)
                     verticalVelocity = -fallSpeed;
             }
@@ -93,16 +93,16 @@ namespace Player
         {
             float tmpX = 0;
             if (inputMove.x != 0) tmpX = inputMove.x > 0 ? 1 : -1;
-            // ‘€ì“ü—Í‚Æ‰”’¼•ûŒü‘¬“x‚©‚çAŒ»İ‘¬“x‚ğŒvZ
+            // æ“ä½œå…¥åŠ›ã¨é‰›ç›´æ–¹å‘é€Ÿåº¦ã‹ã‚‰ã€ç¾åœ¨é€Ÿåº¦ã‚’è¨ˆç®—
             var moveVelocity = new Vector3(
                 tmpX * speed,
                 verticalVelocity,
                 0
             );
-            // Œ»İƒtƒŒ[ƒ€‚ÌˆÚ“®—Ê‚ğˆÚ“®‘¬“x‚©‚çŒvZ
+            // ç¾åœ¨ãƒ•ãƒ¬ãƒ¼ãƒ ã®ç§»å‹•é‡ã‚’ç§»å‹•é€Ÿåº¦ã‹ã‚‰è¨ˆç®—
             var moveDelta = moveVelocity * Time.deltaTime;
 
-            // CharacterController‚ÉˆÚ“®—Ê‚ğw’è‚µAƒIƒuƒWƒFƒNƒg‚ğ“®‚©‚·
+            // CharacterControllerã«ç§»å‹•é‡ã‚’æŒ‡å®šã—ã€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‹•ã‹ã™
             _characterController.Move(moveDelta);
         }
     }
