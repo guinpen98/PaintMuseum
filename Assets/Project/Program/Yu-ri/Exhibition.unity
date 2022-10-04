@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 518866284}
   - component: {fileID: 518866291}
   - component: {fileID: 518866292}
+  - component: {fileID: 518866293}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -552,8 +553,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 518866291}
-        m_TargetAssemblyTypeName: Player.PlayerMove, Assembly-CSharp
+      - m_Target: {fileID: 518866293}
+        m_TargetAssemblyTypeName: PlayerEntity, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -615,19 +616,7 @@ MonoBehaviour:
     m_ActionId: 9e496dcb-64e2-4430-8e6e-99e6b025c55e
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 518866291}
-        m_TargetAssemblyTypeName: Player.PlayerMove, Assembly-CSharp
-        m_MethodName: OnJump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 7712a1f5-1278-4b9c-b193-8b26d250efa4
     m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
@@ -676,7 +665,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518866283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34589a8e1542874489cd65f55f4dc4a6, type: 3}
   m_Name: 
@@ -699,6 +688,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.49790478, y: 1, z: 0.2}
   m_Center: {x: 0.02874446, y: 0, z: 0}
+--- !u!114 &518866293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518866283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59233dba47072f479dd1350fe26f7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 518866289}
+  animator: {fileID: 518866286}
+  moveComponent:
+    inputMove: {x: 0, y: 0}
+    verticalVelocity: 0
+    isGroundedPrev: 0
+    speed: 3
+    jumpSpeed: 7
+    gravity: 15
+    fallSpeed: 10
+    initFallSpeed: 2
+--- !u!1 &577830932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577830934}
+  - component: {fileID: 577830933}
+  m_Layer: 0
+  m_Name: GameMain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &577830933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577830932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f233453e081ef3c4c84a590256783b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameState:
+    playerEntity: {fileID: 518866293}
+--- !u!4 &577830934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577830932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 178.27008, y: 34.89787, z: 163.99664}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &841171111
 GameObject:
   m_ObjectHideFlags: 0
