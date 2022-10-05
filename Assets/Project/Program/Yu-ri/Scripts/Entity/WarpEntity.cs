@@ -10,6 +10,6 @@ public class WarpEntity : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("Player")) SetWarp.Invoke(warpComponent.warpPosition);
+        if (other.gameObject.CompareTag("Player")) SetWarp.Invoke(warpComponent.warpPosition);
     }
 }

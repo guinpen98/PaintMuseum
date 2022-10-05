@@ -6,6 +6,7 @@ public class GameRule : BaseSystem
         _gameEvent.SetWarp += SetFadeOut;
         _gameEvent.FinishFadeOut += SetFadeIn;
         _gameEvent.FinishFadeOut += Warp;
+        _gameEvent.FinishFadeIn += FinishWarp;
     }
     void SetFadeOut()
     {
@@ -18,5 +19,9 @@ public class GameRule : BaseSystem
     void Warp()
     {
         _gameEvent.Warp.Invoke();
+    }
+    void FinishWarp()
+    {
+        _gameEvent.FinishWarp.Invoke();
     }
 }
