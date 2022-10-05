@@ -19,7 +19,7 @@ public class FadeSystem : BaseSystem, IFadeUpdateSystem
     {
         Image fadeImage = _gameState.FadePanel.GetComponent<Image>();
         Color color = fadeImage.color;
-        color.a += 0.01f;
+        color.a += 0.02f;
         fadeImage.color = color;
         if (color.a < 1) return;
         _gameEvent.FinishFadeOut.Invoke();
@@ -29,9 +29,10 @@ public class FadeSystem : BaseSystem, IFadeUpdateSystem
     {
         Image fadeImage = _gameState.FadePanel.GetComponent<Image>();
         Color color = fadeImage.color;
-        color.a -= 0.01f;
+        color.a -= 0.02f;
         fadeImage.color = color;
         if (color.a > 0) return;
+        _gameEvent.FinishFadeIn.Invoke();
         _gameState.isFadeIn = false;
     }
     void SetFadeOut()

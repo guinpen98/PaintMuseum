@@ -5,5 +5,7 @@ public class GameEvent
     public Action SetFadeOut;
     public Action FinishFadeOut;
     public Action SetFadeIn;
+    public Action FinishFadeIn;
     public Action Warp;
+    public Action FinishWarp;
 }
