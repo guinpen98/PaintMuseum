@@ -10,18 +10,21 @@ public class GameMain : MonoBehaviour
     List<BaseSystem> _systemList;
     List<IPreUpdateSystem> _preUpdateSystemList;
     List<IOnUpdateSystem> _onUpdateSystemList;
+    List<IFadeUpdateSystem> _fadeUpdateSystemList;
 
     void Awake()
     {
         _gameEvent = new GameEvent();
         _preUpdateSystemList = new List<IPreUpdateSystem>();
         _onUpdateSystemList = new List<IOnUpdateSystem>();
+        _fadeUpdateSystemList = new List<IFadeUpdateSystem>();
 
         _systemList = new List<BaseSystem>()
         {
             new GameRule(),
             new MoveSystem(),
             new AnimationSystem(),
+            new WarpSystem(),
         };
 
         foreach (BaseSystem system in _systemList)
@@ -30,6 +33,7 @@ public class GameMain : MonoBehaviour
             system.SetEvent();
             if (system is IPreUpdateSystem) _preUpdateSystemList.Add(system as IPreUpdateSystem);
             if (system is IOnUpdateSystem) _onUpdateSystemList.Add(system as IOnUpdateSystem);
+            if (system is IFadeUpdateSystem) _fadeUpdateSystemList.Add(system as IFadeUpdateSystem);
         }
     }
     void Start()
@@ -39,13 +43,20 @@ public class GameMain : MonoBehaviour
 
     void Update()
     {
-        if (isNotPlay()) return;
+        if (isFade())
+        {
+            FadeUpdate();
+            return;
+        }
         foreach (var system in _preUpdateSystemList) system.PreUpdate();
-        if (isNotPlay()) return;
         foreach (var system in _onUpdateSystemList) system.OnUpdate();
     }
-    bool isNotPlay()
+    void FadeUpdate()
     {
-        return false;
+        foreach (var system in _fadeUpdateSystemList) system.FadeUpdate();
+    }
+    bool isFade()
+    {
+        return _gameState.isFadeOut || _gameState.isFadeIn;
     }
 }

@@ -1,0 +1,4 @@
+interface IFadeUpdateSystem
+{
+    void FadeUpdate();
+}
