@@ -10,6 +10,13 @@ TagManager:
   - G_gimmick
   - Stop
   - PullOutPosition
+  - AttackObj
+  - SmallAttack
+  - BigWholeAttack
+  - BigSingleAttack
+  - EnemyAttackBlue
+  - EnemyAttackGreen
+  - EnemyAttackRed
   layers:
   - Default
   - TransparentFX
