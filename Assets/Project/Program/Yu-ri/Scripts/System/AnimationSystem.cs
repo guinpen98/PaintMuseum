@@ -6,9 +6,10 @@ public class AnimationSystem : BaseSystem
 {
     public override void SetEvent()
     {
-        _gameState.playerEntity.SetAnimator += SetAnimator;
+        _gameState.playerEntity.SetAnimator += SetPlayerAnimator;
+        foreach (DoorEntity doorEntity in _gameState.doorEntities) doorEntity.SetIsOpen += SetDoorAnimator;
     }
-    public void SetAnimator()
+    public void SetPlayerAnimator()
     {
         if (_gameState.playerEntity.moveComponent.inputMove.x == 0 && _gameState.playerEntity.moveComponent.inputMove.y == 0) _gameState.playerEntity.animator.SetBool("IsMove", false);
         else _gameState.playerEntity.animator.SetBool("IsMove", true);
@@ -33,5 +34,10 @@ public class AnimationSystem : BaseSystem
             _gameState.playerEntity.animator.SetFloat("Y", -1f);
 
         }
+    }
+    public void SetDoorAnimator(DoorEntity doorEntity)
+    {
+        if (doorEntity.isOpen && !_gameState.isEKey) return;
+        doorEntity.animator.SetBool("IsOpen", doorEntity.isOpen);
     }
 }

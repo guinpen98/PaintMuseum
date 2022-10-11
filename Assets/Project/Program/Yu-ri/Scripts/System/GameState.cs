@@ -7,7 +7,10 @@ public class GameState
 {
     public PlayerEntity playerEntity;
     public WarpEntity[] warpEntities;
+    public DoorEntity[] doorEntities;
     public GameObject camera2;
+
+    public bool isEKey;
 
     public bool isFadeOut;
     public bool isFadeIn;
