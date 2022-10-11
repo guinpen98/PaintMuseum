@@ -26,6 +26,7 @@ public class GameMain : MonoBehaviour
             new AnimationSystem(),
             new WarpSystem(),
             new FadeSystem(),
+            new InputSystem(),
         };
 
         foreach (BaseSystem system in _systemList)
