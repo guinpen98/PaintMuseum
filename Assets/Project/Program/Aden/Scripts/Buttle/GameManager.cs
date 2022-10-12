@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+   public bool isTimer = true; 
     
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        TimeCount();
+        if(isTimer == true) TimeCount();
         IsAttackObj();
         AttackRay();
         
@@ -40,5 +42,12 @@ public class GameManager : MonoBehaviour
     protected virtual void TimeCount()
     {
         //->EnemyAttackScript.cs
+    }
+    void Is_Timer()
+    {
+        if (isTimer == false)
+        {
+            isTimer = true;
+        }
     }
 }
