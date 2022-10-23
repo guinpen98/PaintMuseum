@@ -11,7 +11,7 @@ public class MoveSystem : BaseSystem, IOnUpdateSystem
     }
     public void OnUpdate()
     {
-        Jump();
+        //Jump();
         Move();
     }
     void Jump()
