@@ -11,7 +11,7 @@ public class MoveSystem : BaseSystem, IOnUpdateSystem
     }
     public void OnUpdate()
     {
-        //Jump();
+        Jump();
         Move();
     }
     void Jump()
@@ -53,7 +53,7 @@ public class MoveSystem : BaseSystem, IOnUpdateSystem
     {
 
         // ‰”’¼ãŒü‚«‚É‘¬“x‚ğ—^‚¦‚é
-        _gameState.playerEntity.moveComponent.verticalVelocity = _gameState.playerEntity.moveComponent.jumpSpeed;
+        //_gameState.playerEntity.moveComponent.verticalVelocity = _gameState.playerEntity.moveComponent.jumpSpeed;
     }
     void SetMove(Vector2 moveVec2)
     {
