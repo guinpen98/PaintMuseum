@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/Project/Program/Yuuyu/Scene/Yuuyu.unity
     guid: 59e743cde7a7b1c46b45af91cdba6655
   - enabled: 1
-    path: Assets/Project/Program/Aden/Scene/Aden.unity
+    path: Assets/Project/Program/Aden/Aden.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Project/Program/Aden/Scene/Goal.unity
+    path: Assets/Project/Program/Aden/Goal.unity
     guid: aec9afded605349bbbf79d3e4f7f9185
   m_configObjects: {}

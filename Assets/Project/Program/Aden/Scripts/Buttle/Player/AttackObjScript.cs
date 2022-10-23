@@ -25,10 +25,6 @@ public class AttackObjScript :GameManager
                 {
                     OnClick();
                 }
-                else if(hit_info.collider.tag == "DefenceObj")
-                {
-
-                }
             }
         }
     }
