@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         if(isTimer == true) TimeCount();
         IsAttackObj();
         AttackRay();
-        
+        IsAttackObj();
             }
 
     protected virtual void AttackRay()
@@ -49,5 +49,9 @@ public class GameManager : MonoBehaviour
         {
             isTimer = true;
         }
+    }
+    protected virtual void Is_AttackObj()
+    {
+
     }
 }

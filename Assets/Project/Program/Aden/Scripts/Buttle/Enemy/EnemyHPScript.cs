@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class EnemyHPScript : GameManager
 {
@@ -28,6 +29,7 @@ public class EnemyHPScript : GameManager
         {
             Debug.Log("small");
             hp--;
+            transform.DOShakePosition(0.5f, 0.5f, 30, 1, false, true);
             HPSlider();
             if (hp <= 0)
             {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7506337212868494419}
   - component: {fileID: 7506337212868494413}
   - component: {fileID: 7506337212868494423}
+  - component: {fileID: 165987311038122113}
   m_Layer: 0
   m_Name: AttackObj
   m_TagString: AttackObj
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7506337212868494414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.932676, y: 2.54, z: -1.23}
-  m_LocalScale: {x: 1, y: 1, z: 0.001}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 0.001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5577a000bfc3c45568b790e6c9cc2f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTimer: 1
   AttackMaterial:
   - {fileID: 2100000, guid: 4d097375a71624a1d88a23fe501afb19, type: 2}
   - {fileID: 2100000, guid: f49d132a025a849e384f12428edddb6a, type: 2}
@@ -127,3 +129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183179b41bfe24fd6a6953213b1bd567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTimer: 1
+--- !u!114 &165987311038122113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7506337212868494414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8697130684d451a90ab2df3b6b4160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTimer: 1
+  _material: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
