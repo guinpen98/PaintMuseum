@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+    
     }
 
     // Update is called once per frame
@@ -18,8 +20,8 @@ public class GameManager : MonoBehaviour
         TimeCount();
         IsAttackObj();
         AttackRay();
-        
-            }
+        defenceObj();
+    }
 
     protected virtual void AttackRay()
     {
@@ -40,5 +42,9 @@ public class GameManager : MonoBehaviour
     protected virtual void TimeCount()
     {
         //->EnemyAttackScript.cs
+    }
+    protected virtual void defenceObj()
+    {
+        //->Defence.cs
     }
 }

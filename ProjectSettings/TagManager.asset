@@ -17,6 +17,7 @@ TagManager:
   - EnemyAttackBlue
   - EnemyAttackGreen
   - EnemyAttackRed
+  - Enemy
   layers:
   - Default
   - TransparentFX
