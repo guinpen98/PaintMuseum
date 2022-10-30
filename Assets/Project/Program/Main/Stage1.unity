@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d7ad145b39b5cc147961900e914661f3, type: 2}
   m_LightingSettings: {fileID: 611820915}
 --- !u!196 &4
 NavMeshSettings:
@@ -7621,6 +7621,7 @@ MonoBehaviour:
     - {fileID: 43375743}
     - {fileID: 1855790017}
     - {fileID: 1726753069}
+    keyEntity: {fileID: 0}
     camera2: {fileID: 720102821}
     isEKey: 0
     isFadeOut: 0
@@ -7628,6 +7629,8 @@ MonoBehaviour:
     FadePanel: {fileID: 2133403144}
     isWarp: 0
     warpPosition: {x: 0, y: 0, z: 0}
+    key: {fileID: 0}
+    goal: {fileID: 0}
 --- !u!4 &1123046837
 Transform:
   m_ObjectHideFlags: 0
