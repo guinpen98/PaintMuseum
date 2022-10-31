@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Project/Program/Main/Start_yuuyu.unity
     guid: ffecaa3529aed514789069a7f9d1e1d3
   - enabled: 1
+    path: Assets/Project/Program/Yuuyu/Scene/Goal_yuuyu.unity
+    guid: c13e44d822cd7d84b9bf924105dc8109
+  - enabled: 1
     path: Assets/Project/Program/Yuuyu/Scene/BattleUI.unity
     guid: 83a7cb7d804764949b07d19ac4771586
   - enabled: 1
