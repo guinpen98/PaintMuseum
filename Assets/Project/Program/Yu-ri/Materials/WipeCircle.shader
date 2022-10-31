@@ -17,7 +17,7 @@ Shader "Custom/WipeCircle"
             float _Radius;
             fixed4 frag(v2f_img i) : COLOR
             {
-                fixed2 wipezone = i.uv - fixed2(0.5, 0.5);
+                fixed2 wipezone = i.uv - fixed2(0.5, 0.4);
                 wipezone.x *= 16.0/9.0;
                 if( distance(wipezone, fixed2(0,0)) < _Radius ){
                     fixed4 c = tex2D(_MainTex, i.uv);
