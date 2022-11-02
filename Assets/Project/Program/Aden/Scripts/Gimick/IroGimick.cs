@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class IroGimick : MonoBehaviour
     Rigidbody rb;
     Vector3 G;
     BoxCollider col;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,20 @@ public class IroGimick : MonoBehaviour
         }
         if(this.gameObject.GetComponent<Renderer>().material.color == Color.green)
         {
-            col.enabled = false;
+            col.isTrigger = true;
+        }
+        if (this.gameObject.GetComponent<Renderer>().material.color == Color.blue)
+        {
+            
+        }
+        if (this.gameObject.GetComponent<Renderer>().material.color == Color.yellow)
+        {
+          
+        }
+        if (this.gameObject.GetComponent<Renderer>().material.color == Color.green)
+        {
+            
         }
     }
+   
 }

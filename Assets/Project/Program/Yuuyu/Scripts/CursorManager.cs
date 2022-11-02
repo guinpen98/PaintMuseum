@@ -1,127 +1,158 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CursorManager : MonoBehaviour
 {
-    //ƒJ[ƒ\ƒ‹‚Ì‰æ‘œ‚ğw’è
-    [SerializeField] public Texture2D CursorImgBlue;
-    [SerializeField] public Texture2D CursorImgRed;
-    [SerializeField] public Texture2D CursorImgYellow;
-    [SerializeField] public Texture2D CursorImgGreen;
-    [SerializeField] public Texture2D CursorImgPink;
-    [SerializeField] public Texture2D CursorImgWhite;
+    //ã‚«ãƒ¼ã‚½ãƒ«ã®ç”»åƒã‚’æŒ‡å®š
+    [SerializeField] private Sprite CursorImgBlue;
+    [SerializeField] private Sprite CursorImgRed;
+    [SerializeField] private Sprite CursorImgYellow;
+    [SerializeField] private Sprite CursorImgGreen;
+    [SerializeField] private Sprite CursorImgPink;
+    [SerializeField] private Sprite CursorImgWhite;
 
-    [SerializeField] public int size;
-    //ƒJ[ƒ\ƒ‹‚Ì‰æ‘œ‚Ì•ÏXƒtƒ‰ƒO
+    //ã‚«ãƒ¼ã‚½ãƒ«ã®ç”»åƒã®å¤‰æ›´ãƒ•ãƒ©ã‚°
     private bool isCursorChange=false;
 
-    //ƒJƒ‰[ƒpƒŒƒbƒg‰æ–Ê‚Ì•ÏXƒtƒ‰ƒO
+    //ã‚«ãƒ©ãƒ¼ãƒ‘ãƒ¬ãƒƒãƒˆç”»é¢ã®å¤‰æ›´ãƒ•ãƒ©ã‚°
     private bool isColorParettePhase = false;
-    //F‚Ì¯•Ê
+    //è‰²ã®è­˜åˆ¥
     [SerializeField] public string colorname;
-    //ƒJƒƒ‰‚ğæ“¾
+    //ã‚«ãƒ¡ãƒ©ã‚’å–å¾—
     [SerializeField] public Camera camera_object;
-    //ƒŒƒCƒLƒƒƒXƒg‚ª“–‚½‚Á‚½‚à‚Ì‚ğæ“¾‚·‚é“ü‚ê•¨
+    //ãƒ¬ã‚¤ã‚­ãƒ£ã‚¹ãƒˆãŒå½“ãŸã£ãŸã‚‚ã®ã‚’å–å¾—ã™ã‚‹å…¥ã‚Œç‰©
     private RaycastHit hit;
 
-    //“Á’è‚Ìƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½Û‚Ì‰æ–Ê‚Ì•ÏX
+    //ç‰¹å®šã®ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸéš›ã®ç”»é¢ã®å¤‰æ›´
     [SerializeField] public GameObject panel;
 
-    //ƒJƒ‰[ƒpƒŒƒbƒg‚ÌƒIƒuƒWƒFƒNƒg
+    //ã‚«ãƒ©ãƒ¼ãƒ‘ãƒ¬ãƒƒãƒˆã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     [SerializeField] public GameObject colorPallet;
 
-    //ƒJ[ƒ\ƒ‹‚ÌƒXƒ|ƒbƒg“_‚Ìİ’è
+    //ã‚«ãƒ¼ã‚½ãƒ«ã®ã‚¹ãƒãƒƒãƒˆç‚¹ã®è¨­å®š
     private Vector2 hotSpot = new Vector2(0,0);
+
+    //ç”»åƒ
+    private Image Mouse_Image;
+    [SerializeField] private GameObject Mouse_Image_obj;
+    //Canvasã®å¤‰æ•°
+    private Canvas canvas;
+    //ã‚­ãƒ£ãƒ³ãƒã‚¹å†…ã®ãƒ¬ã‚¯ãƒˆãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ 
+    private RectTransform canvasRect;
+    //ãƒã‚¦ã‚¹ã®ä½ç½®ã®æœ€çµ‚çš„ãªæ ¼ç´å…ˆ
+    private Vector2 MousePos;
 
     // Start is called before the first frame update
     void Start()
     {
-        // ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚ğ‰æ–Ê“à‚ÉƒƒbƒN‚·‚éB
+        // ãƒã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ã‚’ç”»é¢å†…ã«ãƒ­ãƒƒã‚¯ã™ã‚‹ã€‚
         Cursor.lockState = CursorLockMode.Locked;
-        // ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚ğÁ‹‚·‚é
+        // ãƒã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ã‚’æ¶ˆå»ã™ã‚‹
         Cursor.visible = false;
 
-        //aa= ResizeTexture(CursorImgBlue, size, size);
-        //CursorImgBlue = aa;
+        //Hierarchyã«ã‚ã‚‹Canvasã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¢ã—ã¦canvasã«å…¥ã‚Œã„ã‚‹
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+        //canvaså†…ã«ã‚ã‚‹RectTransformã‚’canvasRectã«å…¥ã‚Œã‚‹
+        canvasRect = canvas.GetComponent<RectTransform>();
+
+        //Canvaså†…ã«ã‚ã‚‹MouseImageã‚’æ¢ã—ã¦Mouse_Imageã«å…¥ã‚Œã‚‹
+        Mouse_Image = Mouse_Image_obj.GetComponent<Image>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //“Á’è‚Ìkey‚ğ‰Ÿ‚·‚ÆƒJ[ƒ\ƒ‹‚ª•Ï‚í‚é
+        Cursor.visible = false;
+        //ç‰¹å®šã®keyã‚’æŠ¼ã™ã¨ã‚«ãƒ¼ã‚½ãƒ«ãŒå¤‰ã‚ã‚‹
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (isColorParettePhase == false)
             {
-                //ƒtƒ‰ƒO‚Ì•ÏX
+                
+                //ãƒ•ãƒ©ã‚°ã®å¤‰æ›´
                 isCursorChange = true;
                 isColorParettePhase = true;
 
                 colorname = "White";
-                //ƒIƒuƒWƒFƒNƒg‚ğ‰Â‹‰»
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å¯è¦–åŒ–
                 panel.SetActive(true);
                 colorPallet.SetActive(true);
+                Mouse_Image_obj.gameObject.SetActive(true);
 
-                //ƒJ[ƒ\ƒ‹‚ÌƒƒbƒN‚ğ‰ğœ•Œ©‚¦‚é‚æ‚¤‚É‚·‚é
+                //ã‚«ãƒ¼ã‚½ãƒ«ã®ãƒ­ãƒƒã‚¯ã‚’è§£é™¤
                 Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
 
             }
             else
             {
-                //ƒtƒ‰ƒO‚Ì•ÏX
+                
+                //ãƒ•ãƒ©ã‚°ã®å¤‰æ›´
                 isCursorChange = false;
                 panel.SetActive(false);
-                //ƒIƒuƒWƒFƒNƒg‚ğŒ©‚¦‚È‚­‚·‚é
+                //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¦‹ãˆãªãã™ã‚‹
                 colorPallet.SetActive(false);
                 isColorParettePhase = false;
+                Mouse_Image_obj.gameObject.SetActive(false);
 
-                // ƒJ[ƒ\ƒ‹‚ğ‰æ–Ê“à‚ÉƒƒbƒN‚·‚é•Œ©‚¦‚È‚­‚·‚é
+                // ã‚«ãƒ¼ã‚½ãƒ«ã‚’ç”»é¢å†…ã«ãƒ­ãƒƒã‚¯ã™ã‚‹
                 Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                
             }
         }
 
 
-        //ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚Ì‰æ‘œ‚Ì•\¦
+        //ãƒã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ã®ç”»åƒã®è¡¨ç¤º
         if (isCursorChange)
         {
+            //Canvasã®RectTransformå†…ã«ã‚ã‚‹ãƒã‚¦ã‚¹ã®ä½ç½®ã‚’RectTransformã®ãƒ­ãƒ¼ã‚«ãƒ«ãƒã‚¸ã‚·ãƒ§ãƒ³ã«å¤‰æ›ã™ã‚‹,canvas.worldCameraã¯ã‚«ãƒ¡ãƒ©,å‡ºåŠ›å…ˆã¯MousePos
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
+            //Mouse_Imageã‚’è¡¨ç¤ºã™ã‚‹ä½ç½®ã«MousePosã‚’ä½¿ã†
+            Mouse_Image.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x + 25, MousePos.y + 35);
             switch (colorname)
             {
                 case "Blue":
+                    Mouse_Image.sprite = CursorImgBlue;
                     //Cursor.SetCursor(aa, hotSpot, CursorMode.Auto);
-                    Cursor.SetCursor(CursorImgBlue, hotSpot, CursorMode.Auto);
+                    //Cursor.SetCursor(CursorImgBlue, hotSpot, CursorMode.Auto);
                     break;
                 case "Red":
-                    Cursor.SetCursor(CursorImgRed, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgRed;
+                    //Cursor.SetCursor(CursorImgRed, Vector2.zero, CursorMode.Auto);
                     break;
                 case "Yellow":
-                    Cursor.SetCursor(CursorImgYellow, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgYellow;
+                    //Cursor.SetCursor(CursorImgYellow, Vector2.zero, CursorMode.Auto);
                     break;
                 case "Green":
-                    Cursor.SetCursor(CursorImgGreen, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgGreen;
+                    //Cursor.SetCursor(CursorImgGreen, Vector2.zero, CursorMode.Auto);
                     break;
                 case "Pink":
-                    Cursor.SetCursor(CursorImgPink, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgPink;
+                    //Cursor.SetCursor(CursorImgPink, Vector2.zero, CursorMode.Auto);
                     break;
                 case "White":
-                    Cursor.SetCursor(CursorImgWhite, Vector2.zero, CursorMode.Auto);
+                    Mouse_Image.sprite = CursorImgWhite;
+                    //Cursor.SetCursor(CursorImgWhite, Vector2.zero, CursorMode.Auto);
                     break;
-                default:
-                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                    break;
+                /*default:
+                    Mouse_Image.sprite = CursorImgWhite;
+                    //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    break;*/
             }
         }
         else
         {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            //Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
 
 
-        //ƒ}ƒEƒX‚Ì¶ƒNƒŠƒbƒN‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+        //ãƒã‚¦ã‚¹ã®å·¦ã‚¯ãƒªãƒƒã‚¯ãŒæŠ¼ã•ã‚ŒãŸã¨ã
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = camera_object.ScreenPointToRay(Input.mousePosition);
@@ -134,10 +165,5 @@ public class CursorManager : MonoBehaviour
 
     }
 
-    Texture2D ResizeTexture(Texture2D srcTexture, int newWidth, int newHeight)
-    {
-        var resizedTexture = new Texture2D(newWidth, newHeight, TextureFormat.RGBA32, false);
-        Graphics.ConvertTexture(srcTexture, resizedTexture);
-        return resizedTexture;
-    }
+    
 }

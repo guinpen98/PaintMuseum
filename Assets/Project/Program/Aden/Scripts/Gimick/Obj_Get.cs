@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,10 +12,7 @@ public class Obj_Get : MonoBehaviour
     void Start()
     {
         get = PlayerPrefs.GetInt("get", 0);
-        if(get == 1)
-        {
-            ins();
-        }
+        
     }
 
     // Update is called once per frame
@@ -25,8 +22,9 @@ public class Obj_Get : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-         if(other.gameObject.tag == "CanGet")
+         if(other.gameObject.tag == "irokae" )
         {
+          
             if (get == 0)
             {
                 get_obj = other.gameObject.name;
@@ -35,9 +33,15 @@ public class Obj_Get : MonoBehaviour
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("get", 1);
                 PlayerPrefs.Save();
-                other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                
+               other.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 other.gameObject.GetComponent<BoxCollider>().enabled = false;
+           
               }
+           else if (get == 1 && other.gameObject.tag =="PullOutPosition")
+            {
+                ins();
+            }
             Debug.Log(get_obj);
             Destroy(this.gameObject);
         }

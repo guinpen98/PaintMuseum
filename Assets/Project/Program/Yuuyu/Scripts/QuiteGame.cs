@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,10 +19,10 @@ public class QuiteGame : MonoBehaviour
     public void EndGame()
     {
         //if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;//ƒQ[ƒ€ƒvƒŒƒCI—¹
-        
+        // UnityEditor.EditorApplication.isPlaying = false;//ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤çµ‚äº†
 
-        //Application.Quit();//ƒQ[ƒ€ƒvƒŒƒCI—¹
+
+        //Application.Quit();//ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤çµ‚äº†
 
     }
 }
